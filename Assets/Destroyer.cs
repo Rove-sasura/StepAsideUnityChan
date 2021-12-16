@@ -19,11 +19,13 @@ public class Destroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Destroyer‚ªUnitychan‚É’Ç”ö
         Vector3 pos = target.position;
-        offset = new Vector3(0, 0, -2);
+        offset = new Vector3(0, 0, -6);
 
         //this.transform.position = target.position + offset;
         
+        //x‚Æy‚Í0‚ÉŒÅ’è
         pos.x = 0;
         pos.y = 0;
         pos.z += offset.z;
@@ -33,20 +35,10 @@ public class Destroyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag" || other.gameObject.tag == "CoinTag")
-        //{
-        //    Destroy(other.gameObject);
-        //}
-
-        Debug.Log(other.gameObject.tag);
-
-        Destroy(other.gameObject);
-
-        //if (other.gameObject.tag == "TrafficConeTag")
-        //{
-        //    Destroy(other.gameObject);
-        //}
-
+        if (other.gameObject.tag == "CarTag" || other.gameObject.tag == "TrafficConeTag" || other.gameObject.tag == "CoinTag")
+        {
+            Destroy(other.gameObject);
+        }
     }
 
 }
